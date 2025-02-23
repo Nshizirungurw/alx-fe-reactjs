@@ -1,3 +1,5 @@
+import UserContext from "./UserContext"
+import {UseContext} from 'react-dom'
 function UserProfile({userData}){
     return (
         
