@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 function Navbar() {
   return (
-      <nav style={{display:'flex',backgroundColor:'gray',width:'100%'}}>
+      <nav style={{display:'flex',backgroundColor:'gray',width:'100%',justifyContent:'center'}}>
         <ul style={{listStyle:'none',display:'flex'}}>
             <li style={{paddingLeft:'20px'}}>
                 <Link to="/" style={{textDecoration:'none',fontSize:'20px',color:'black'}} >Home</Link>
