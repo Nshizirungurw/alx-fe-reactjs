@@ -8,7 +8,6 @@ const FormikForm = () => {
     email: '',
     password: '',
   };
-
   const validationSchema = Yup.object({
     username: Yup.string().required('Username is required'),
     email: Yup.string().email('Invalid email format').required('Email is required'),
