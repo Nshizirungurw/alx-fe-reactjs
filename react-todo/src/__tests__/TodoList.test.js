@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import TodoList from '../TodoList';
+import TodoList from '../components/TodoList';
 
 test('renders TodoList with initial todos', () => {
   render(<TodoList />);
@@ -28,7 +28,7 @@ test('can toggle a todo', () => {
 test('can delete a todo', () => {
   render(<TodoList />);
   const todo = screen.getByText('Learn React');
-  const deleteButton = todo.nextSibling;
+  const deleteButton = todo;
   fireEvent.click(deleteButton);
   expect(screen.queryByText('Learn React')).toBeNull();
 });
