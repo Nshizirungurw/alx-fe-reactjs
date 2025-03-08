@@ -1,5 +1,5 @@
-import FormikForm from "./components/FormikForm"
-// import RegistrationForm from "./components/RegistrationForm"
+// import FormikForm from "./components/FormikForm"
+import RegistrationForm from "./components/RegistrationForm"
 
 
 function App() {
@@ -7,9 +7,9 @@ function App() {
   return (
     <div>
       <h1>Registration form</h1>
-      {/* <RegistrationForm /> */}
+      <RegistrationForm />
 
-      <FormikForm />
+      {/* <FormikForm /> */}
 
     </div>
   )
