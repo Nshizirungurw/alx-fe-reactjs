@@ -18,7 +18,7 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     const instructionList = instructions.split("\n").map((step) => step.trim()).filter(Boolean);
     
     if (ingredientList.length < 2) {
-      setErrors("Please include at least two ingredients.");
+      setErrors("Please include at least two ingredients to validate your form.");
       return;
     }
 
