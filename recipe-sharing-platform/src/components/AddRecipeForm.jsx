@@ -59,7 +59,7 @@ const AddRecipeForm = ({ onAddRecipe }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-semibold">Preparation Steps (one per line)</label>
+          <label className="block text-gray-700 font-semibold">Preparation steps (one per line)</label>
           <textarea 
             className="w-full mt-1 p-2 border rounded h-24"
             value={instructions} 
