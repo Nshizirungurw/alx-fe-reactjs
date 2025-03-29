@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchUsers } from "../services/githubService";
+import { fetchUserData } from "../services/githubService";
 
 const Search = () => {
   const [formData, setFormData] = useState({ username: "", location: "", minRepos: "" });
@@ -21,7 +21,7 @@ const Search = () => {
     setPage(1);
 
     try {
-      const data = await fetchUsers({ ...formData, page: 1 });
+      const data = await fetchUserData({ ...formData, page: 1 });
       setUsers(data.items);
       setTotalCount(data.total_count);
     } catch (err) {
@@ -37,7 +37,7 @@ const Search = () => {
     setLoading(true);
 
     try {
-      const data = await fetchUsers({ ...formData, page: nextPage });
+      const data = await fetchUserData({ ...formData, page: nextPage });
       setUsers([...users, ...data.items]);
     } catch (err) {
       setError(err,"Error loading more users.");
