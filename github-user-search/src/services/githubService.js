@@ -1,12 +1,16 @@
 import axios from "axios";
 
-const BASE_URL = "https://api.github.com/users/";
+const BASE_URL = "https://api.github.com/search/users";
 
-export const fetchUserData = async (username) => {
+export const fetchUsers = async ({ username, location, minRepos, page = 1 }) => {
   try {
-    const response = await axios.get(`${BASE_URL}${username}`);
+    let query = `q=${username}`;
+    if (location) query += `+location:${location}`;
+    if (minRepos) query += `+repos:>${minRepos}`;
+
+    const response = await axios.get(`${BASE_URL}?${query}&page=${page}&per_page=10`);
     return response.data;
   } catch (error) {
-    throw new Error("User not found",error);
+    throw new Error(error,"Error fetching users. Please try again later.");
   }
 };
