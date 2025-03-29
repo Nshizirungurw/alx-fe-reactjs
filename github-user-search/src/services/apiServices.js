@@ -1,15 +1,12 @@
-const API_KEY = import.meta.env.VITE_APP_GITHUB_API_KEY;
-const BASE_URL = "https://api.github.com";
+import axios from "axios";
 
-export const fetchGitHubUser = async (username) => {
+const BASE_URL = "https://api.github.com/users/";
+
+export const fetchUserData = async (username) => {
   try {
-    const response = await fetch(`${BASE_URL}/users/${username}`, {
-      headers: {
-        Authorization: `token ${API_KEY}`,
-      },
-    });
-    return await response.json();
+    const response = await axios.get(`${BASE_URL}${username}`);
+    return response.data;
   } catch (error) {
-    console.error("Error fetching GitHub user:", error);
+    throw new Error("User not found",error);
   }
 };
