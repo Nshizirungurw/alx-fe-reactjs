@@ -11,6 +11,6 @@ export const fetchUsers = async ({ username, location, minRepos, page = 1 }) => 
     const response = await axios.get(`${BASE_URL}?${query}&page=${page}&per_page=10`);
     return response.data;
   } catch (error) {
-    throw new Error(error,"Error fetching users. Please try again later.");
+    throw new Error(error.response?.data?.message || "Something went wrong");
   }
 };
